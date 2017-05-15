@@ -1,8 +1,8 @@
-package com.felix.mapper;
+package com.ordersystem.mapper;
 
 import java.util.List;
 
-import com.felix.entity.User;
+import com.ordersystem.entity.User;
 
 public interface UserMapper {
 	public User findUserById(int id);

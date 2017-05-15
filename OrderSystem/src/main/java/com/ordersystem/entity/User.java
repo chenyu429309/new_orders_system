@@ -1,4 +1,4 @@
-package com.felix.entity;
+package com.ordersystem.entity;
 
 import org.apache.ibatis.type.Alias;
 //利用注解来设置别名

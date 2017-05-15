@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd ">
 
 	<!-- 可以扫描controller、service、... 这里让扫描controller，指定controller的包 -->
-	<context:component-scan base-package="com.felix.controller"></context:component-scan>
+	<context:component-scan base-package="com.ordersystem.controller"></context:component-scan>
 	
 	
 	 <!--主要作用于@Controller激活该模式下面是一种简写形式
@@ -31,7 +31,7 @@
 	 	-->
       	<bean
 			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-				<property name="prefix" value="/"/>
+				<property name="prefix" value="WEB-INF/page/"/>
 				<property name="suffix" value=".jsp"/>
 		</bean>
 	
