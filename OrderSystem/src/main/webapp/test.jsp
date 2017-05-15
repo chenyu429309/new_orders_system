@@ -5,22 +5,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="/SpringMybaitsDemo/js/jquery.min.js"></script>
-<script type="text/javascript" src="/SpringMybaitsDemo/js/jquery.ba-hashchange.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.ba-hashchange.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		 $(window).hashchange(function(e){
-			 var i=array.length;
-			 if(i>=2){
-			 $("#home").html(array[i-2]);
-				array.pop();
-				window.history.pushState(null, null, "");
-			 }
-		 } ) 
-		 array=[];
-		 array.push($("#home").html());
-		 window.history.pushState( "#"+"t1.jsp", null, "#"+"test.jsp");
-		 $('#home').load('user/test');
+		 $(function(){  
+		        var saveDataAry=[];  
+		        var data1={"userName":"test","address":"gz"};  
+		        var data2={"userName":"ququ","address":"gr"};  
+		        saveDataAry.push(data1);  
+		        saveDataAry.push(data2);         
+		        $.ajax({ 
+		            type:"POST", 
+		            url:"user/saveUser", 
+		            dataType:"json",      
+		            contentType:"application/json",               
+		            data:JSON.stringify(saveDataAry), 
+		            success:function(data){ 
+		                                       
+		            } 
+		         }); 
+		    });  
+// 		 $(window).hashchange(function(e){
+// 			 var i=array.length;
+// 			 if(i>=2){
+// 			 $("#home").html(array[i-2]);
+// 				array.pop();
+// 				window.history.pushState(null, null, "");
+// 			 }
+// 		 } ) 
+// 		 array=[];
+// 		 array.push($("#home").html());
+// 		 window.history.pushState( "#"+"t1.jsp", null, "#"+"test.jsp");
+// 		 $('#home').load('user/test');
 	})
 	
 </script>
